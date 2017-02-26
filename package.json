@@ -1,0 +1,54 @@
+{
+  "name": "baenk",
+  "version": "1.0.0",
+  "description": "A simple and no-frills benchmarking library for JavaScript",
+  "license": "MIT",
+  "repository": "kasperisager/baenk",
+  "author": "Kasper Kronborg Isager <kasperisager@gmail.com>",
+  "scripts": {
+    "test": "xo && ava",
+    "transpile": "babel lib -d dist",
+    "prepublish": "npm run transpile"
+  },
+  "main": "dist/bench.js",
+  "jsnext:main": "lib/bench.js",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "keywords": [
+    "es6",
+    "benchmark"
+  ],
+  "dependencies": {
+    "present": "1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.16.0",
+    "sinon": "^1.17.6",
+    "xo": "^0.17.1"
+  },
+  "ava": {
+    "verbose": true,
+    "require": [
+      "babel-core/register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "xo": {
+    "space": true,
+    "envs": [
+      "browser",
+      "node"
+    ],
+    "rules": {
+      "no-new-func": 0
+    }
+  }
+}
